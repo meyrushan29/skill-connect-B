@@ -16,39 +16,49 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1")
 public class CommentController {
     @Autowired
+
     private CommentService commentService;
+
     @PostMapping("/insertcomment")
     public ResponseEntity<ResponseObjectService> insertComment(@RequestBody CommentPostRequestEntity postedComment) {
         CommentEntity inputComment = postedComment.getCommentEntity();
         IdObjectEntity inputPostId = postedComment.getPostId();
-        return new ResponseEntity<ResponseObjectService>(commentService.insertComment(inputComment, inputPostId.getId()), HttpStatus.OK);
+        return new ResponseEntity<ResponseObjectService>(
+                commentService.insertComment(inputComment, inputPostId.getId()), HttpStatus.OK);
     }
 
-    @PostMapping("/getcomments") 
+    @PostMapping("/getcomments")
     public ResponseEntity<ResponseObjectService> getComments(@RequestBody IdObjectEntity inputPostId) {
-        return new ResponseEntity<ResponseObjectService>(commentService.getComments(inputPostId.getId()), HttpStatus.OK);
+        return new ResponseEntity<ResponseObjectService>(commentService.getComments(inputPostId.getId()),
+                HttpStatus.OK);
     }
 
     @PostMapping("/getallcomments")
     public ResponseEntity<ResponseObjectService> getAllComments() {
         return new ResponseEntity<ResponseObjectService>(commentService.getAllComments(), HttpStatus.OK);
     }
+
     @PutMapping("/editcomment")
     public ResponseEntity<ResponseObjectService> putComment(@RequestBody CommentPostRequestEntity postedComment) {
         System.out.println(postedComment);
         CommentEntity inputComment = postedComment.getCommentEntity();
         IdObjectEntity inputPostId = postedComment.getPostId();
-        return new ResponseEntity<ResponseObjectService>(commentService.editUserComment(inputComment, inputPostId.getId()), HttpStatus.OK);
+        return new ResponseEntity<ResponseObjectService>(
+                commentService.editUserComment(inputComment, inputPostId.getId()), HttpStatus.OK);
 
-//        return new ResponseEntity<ResponseObjectService>(commentService.editUserComment(inputPost), HttpStatus.OK);
+        // return new
+        // ResponseEntity<ResponseObjectService>(commentService.editUserComment(inputPost),
+        // HttpStatus.OK);
     }
+
     @PutMapping("/deletecomment")
     public ResponseEntity<ResponseObjectService> deletePost(@RequestBody CommentPostRequestEntity postedComment) {
         System.out.println(postedComment);
         CommentEntity inputComment = postedComment.getCommentEntity();
         IdObjectEntity inputPostId = postedComment.getPostId();
 
-        return new ResponseEntity<ResponseObjectService>(commentService.deleteUserComment(inputComment, inputPostId.getId()), HttpStatus.OK);
+        return new ResponseEntity<ResponseObjectService>(
+                commentService.deleteUserComment(inputComment, inputPostId.getId()), HttpStatus.OK);
     }
 
 }
