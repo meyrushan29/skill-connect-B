@@ -22,6 +22,8 @@ public class EducationalContentController {
         return new ResponseEntity<>(educationalContentService.createContent(content), HttpStatus.OK);
     }
 
+    
+
     @PostMapping("/user")
     public ResponseEntity<ResponseObjectService> getUserContent(@RequestBody IdObjectEntity userId) {
         return new ResponseEntity<>(educationalContentService.getUserContent(userId), HttpStatus.OK);
