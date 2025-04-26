@@ -50,6 +50,7 @@ public class CommentController {
         // ResponseEntity<ResponseObjectService>(commentService.editUserComment(inputPost),
         // HttpStatus.OK);
     }
+    // deletecomment
 
     @PutMapping("/deletecomment")
     public ResponseEntity<ResponseObjectService> deletePost(@RequestBody CommentPostRequestEntity postedComment) {
