@@ -10,6 +10,7 @@ import com.linhtch90.psnbackend.service.ResponseObjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -38,6 +39,7 @@ public class CommentController {
         return new ResponseEntity<ResponseObjectService>(commentService.getAllComments(), HttpStatus.OK);
     }
 
+    // editcomment
     @PutMapping("/editcomment")
     public ResponseEntity<ResponseObjectService> putComment(@RequestBody CommentPostRequestEntity postedComment) {
         System.out.println(postedComment);
