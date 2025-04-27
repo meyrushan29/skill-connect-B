@@ -38,6 +38,9 @@ public class PostController {
                         HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 
+
+    //Edit Post Update 
+
     @PutMapping("/editpost")
     public ResponseEntity<ResponseObjectService> deletePost(@RequestBody PostEntity inputPost) {
         System.out.println(inputPost);
