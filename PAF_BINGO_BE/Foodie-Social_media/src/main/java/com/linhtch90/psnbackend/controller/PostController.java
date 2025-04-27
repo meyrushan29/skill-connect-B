@@ -26,6 +26,9 @@ public class PostController {
     public ResponseEntity<ResponseObjectService> insertPost(@RequestBody PostEntity inputPost) {
         return new ResponseEntity<ResponseObjectService>(postService.insertPost(inputPost), HttpStatus.OK);
     }
+
+
+    // Delete Erro Fixed
     @DeleteMapping("/deletepost")
     public ResponseEntity<ResponseObjectService> deletePost(@RequestBody IdObjectEntity inputUserId) {
         System.out.println("Deleting post with ID: " + inputUserId.getId());
@@ -47,6 +50,9 @@ public class PostController {
     public ResponseEntity<ResponseObjectService> findPostByUserId(@RequestBody IdObjectEntity inputUserId) {
         return new ResponseEntity<ResponseObjectService>(postService.findPostByUserId(inputUserId), HttpStatus.OK);
     }
+
+
+    // Folowers Update
 
     @PostMapping("/followingposts")
     public ResponseEntity<ResponseObjectService> findPostByFollowing(@RequestBody IdObjectEntity inputUserId) {
