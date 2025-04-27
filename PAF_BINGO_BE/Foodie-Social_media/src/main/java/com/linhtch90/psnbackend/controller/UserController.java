@@ -107,6 +107,9 @@ public class UserController {
 //        return new ResponseEntity<ResponseObjectService>(userService.update(inputUser), HttpStatus.OK);
 //    }
 
+
+// Get Users 
+
     @GetMapping("/getdata")
     public ResponseEntity<String> testAfterLogin(Principal p) {
         return ResponseEntity.ok("Welcome. You are: " + p.getName());
