@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//User Entity Created
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

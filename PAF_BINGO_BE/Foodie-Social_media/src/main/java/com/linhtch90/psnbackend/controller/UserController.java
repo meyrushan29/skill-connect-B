@@ -25,11 +25,14 @@ public class UserController {
     @Autowired
     private JWTUtil jwtUtil;
 
+
     @Autowired
     private AuthenticationManager authenticationManager;
 
     @Autowired
     private UserRepository userRepo;
+
+    //user controller create for User Profile setup     User End Points Create 
 
     @PostMapping("/users")
     public ResponseEntity<ResponseObjectService> findAllUsers() {
