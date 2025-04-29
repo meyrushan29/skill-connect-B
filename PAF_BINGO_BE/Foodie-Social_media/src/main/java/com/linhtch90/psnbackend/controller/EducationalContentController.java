@@ -49,6 +49,9 @@ public class EducationalContentController {
         return new ResponseEntity<>(educationalContentService.markAsLearned(request), HttpStatus.OK);
     }
 
+    
+
+
 
     @PostMapping("/bookmark")
     public ResponseEntity<ResponseObjectService> bookmarkContent(@RequestBody EducationalContentRequest request) {
