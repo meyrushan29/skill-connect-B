@@ -67,6 +67,7 @@ public class EducationalContentController {
     }
 
 
+
     @PostMapping("/following")
     public ResponseEntity<ResponseObjectService> getFollowingContent(@RequestBody IdObjectEntity userId) {
         return new ResponseEntity<>(educationalContentService.getFollowingContent(userId), HttpStatus.OK);
