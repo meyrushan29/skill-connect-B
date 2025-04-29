@@ -62,14 +62,13 @@ public class EducationalContentController {
         return new ResponseEntity<>(educationalContentService.getLearnedContent(userId), HttpStatus.OK);
     }
 
-
-
-
-
     @PostMapping("/bookmarked")
     public ResponseEntity<ResponseObjectService> getBookmarkedContent(@RequestBody IdObjectEntity userId) {
         return new ResponseEntity<>(educationalContentService.getBookmarkedContent(userId), HttpStatus.OK);
     }
+
+
+
 
 
 
