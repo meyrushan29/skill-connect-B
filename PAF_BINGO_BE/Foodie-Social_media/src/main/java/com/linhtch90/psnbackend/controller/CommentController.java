@@ -32,13 +32,13 @@ public class CommentController {
                 HttpStatus.OK);
     }
 
-    // get all comments
+    // get all comments API
     @PostMapping("/getallcomments")
     public ResponseEntity<ResponseObjectService> getAllComments() {
         return new ResponseEntity<ResponseObjectService>(commentService.getAllComments(), HttpStatus.OK);
     }
 
-    // editcomment
+    // editcomment API function
     @PutMapping("/editcomment")
     public ResponseEntity<ResponseObjectService> putComment(@RequestBody CommentPostRequestEntity postedComment) {
         System.out.println(postedComment);
@@ -51,7 +51,7 @@ public class CommentController {
         // ResponseEntity<ResponseObjectService>(commentService.editUserComment(inputPost),
         // HttpStatus.OK);
     }
-    // deletecomment
+    // deletecomment function
 
     @PutMapping("/deletecomment")
     public ResponseEntity<ResponseObjectService> deletePost(@RequestBody CommentPostRequestEntity postedComment) {
