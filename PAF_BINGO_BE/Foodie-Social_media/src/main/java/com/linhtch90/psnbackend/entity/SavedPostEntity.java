@@ -15,7 +15,7 @@ public class SavedPostEntity {
     @Id
     private String id;
 
-    private String userId;      // User who saved the post
-    private String postId;      // ID of the saved post
-    private long savedAt;       // Timestamp when the post was saved
+    private String userId; // saved the post
+    private String postId; // saved post ID
+    private long savedAt; // Timestamp when the post was saved
 }
