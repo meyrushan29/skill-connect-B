@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 
 
-//unauthorized user Implements error Fixed  
+//unauthorized user Implements error Fixed          // Error Handler Update
 @Component
 public class UnAuthorizedUserAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override
