@@ -55,6 +55,8 @@ public class UserController {
     }
 
 
+
+    // Folowers Implement
     @PostMapping("/users/getfollowing")
     public ResponseEntity<ResponseObjectService> findFollowing(@RequestBody IdObjectEntity inputId) {
         return new ResponseEntity<ResponseObjectService>(userService.findFollowing(inputId.getId()), HttpStatus.OK);
@@ -65,6 +67,8 @@ public class UserController {
         return new ResponseEntity<ResponseObjectService>(userService.findFollower(inputId.getId()), HttpStatus.OK);
     }
 
+
+    //Unfolower implement 
     @DeleteMapping("/users/unfollow")
     public ResponseEntity<ResponseObjectService> unfollowUserss(@RequestBody DoubleIdObjectEntity doubleId) {
         return new ResponseEntity<ResponseObjectService>(userService.unfollowUser(doubleId), HttpStatus.OK);
