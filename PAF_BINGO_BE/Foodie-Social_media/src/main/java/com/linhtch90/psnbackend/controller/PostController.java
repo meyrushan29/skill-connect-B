@@ -41,6 +41,9 @@ public class PostController {
 
     //Edit Post Update 
 
+
+    // Post API Error Update
+
     @PutMapping("/editpost")
     public ResponseEntity<ResponseObjectService> deletePost(@RequestBody PostEntity inputPost) {
         System.out.println(inputPost);
