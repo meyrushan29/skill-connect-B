@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class CommentPostRequestEntity {
     private CommentEntity commentEntity;
     private IdObjectEntity postId;
+
 }
