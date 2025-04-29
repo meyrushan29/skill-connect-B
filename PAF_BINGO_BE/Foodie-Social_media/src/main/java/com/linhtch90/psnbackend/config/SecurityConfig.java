@@ -14,6 +14,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
 
+
+
+
+//WEB soource  Config update
 @Component
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
