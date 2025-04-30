@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+//Devlopmment of Backend in Skill Sharing Part
+
 @RestController
 @RequestMapping("/api/v1")
 public class PostController {
@@ -26,6 +28,7 @@ public class PostController {
         return new ResponseEntity<ResponseObjectService>(postService.insertPost(inputPost), HttpStatus.OK);
     }
 
+    // Delete Erro Fixed
     @DeleteMapping("/deletepost")
     public ResponseEntity<ResponseObjectService> deletePost(@RequestBody IdObjectEntity inputUserId) {
         System.out.println("Deleting post with ID: " + inputUserId.getId());
@@ -33,6 +36,10 @@ public class PostController {
         return new ResponseEntity<>(response,
                 response.getStatus().equals("success") ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
+
+    // Edit Post Update
+
+    // Post API Error Update
 
     @PutMapping("/editpost")
     public ResponseEntity<ResponseObjectService> deletePost(@RequestBody PostEntity inputPost) {
@@ -47,7 +54,8 @@ public class PostController {
         return new ResponseEntity<ResponseObjectService>(postService.findPostByUserId(inputUserId), HttpStatus.OK);
     }
 
-    // followingpost
+    // Folowers Update
+
     @PostMapping("/followingposts")
     public ResponseEntity<ResponseObjectService> findPostByFollowing(@RequestBody IdObjectEntity inputUserId) {
         return new ResponseEntity<ResponseObjectService>(postService.findPostByFollowing(inputUserId), HttpStatus.OK);

@@ -8,7 +8,7 @@ import com.linhtch90.psnbackend.repository.UserRepository;
 import com.linhtch90.psnbackend.service.JWTUtil;
 import com.linhtch90.psnbackend.service.ResponseObjectService;
 import com.linhtch90.psnbackend.service.UserService;
-
+                                                                        
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,11 +25,14 @@ public class UserController {
     @Autowired
     private JWTUtil jwtUtil;
 
+
     @Autowired
     private AuthenticationManager authenticationManager;
 
     @Autowired
     private UserRepository userRepo;
+
+    //user controller create for User Profile setup     User End Points Create 
 
     @PostMapping("/users")
     public ResponseEntity<ResponseObjectService> findAllUsers() {
@@ -52,6 +55,8 @@ public class UserController {
     }
 
 
+
+    // Folowers Implement
     @PostMapping("/users/getfollowing")
     public ResponseEntity<ResponseObjectService> findFollowing(@RequestBody IdObjectEntity inputId) {
         return new ResponseEntity<ResponseObjectService>(userService.findFollowing(inputId.getId()), HttpStatus.OK);
@@ -62,21 +67,29 @@ public class UserController {
         return new ResponseEntity<ResponseObjectService>(userService.findFollower(inputId.getId()), HttpStatus.OK);
     }
 
+
+    //Unfolower implement 
     @DeleteMapping("/users/unfollow")
     public ResponseEntity<ResponseObjectService> unfollowUserss(@RequestBody DoubleIdObjectEntity doubleId) {
         return new ResponseEntity<ResponseObjectService>(userService.unfollowUser(doubleId), HttpStatus.OK);
     }
+
+    // update Users
     @PutMapping("/users/update")
     public ResponseEntity<ResponseObjectService> saveUsers(@RequestBody UserEntity inputUser) {
         String message = "Hello, world!";
         System.out.println(message);
         return new ResponseEntity<ResponseObjectService>(userService.update(inputUser), HttpStatus.OK);
     }
+
+
    @PostMapping("/users/save")
    public ResponseEntity<ResponseObjectService> saveUser(@RequestBody UserEntity inputUser) {
       String message = "Hello, world!";      System.out.println(message);
        return new ResponseEntity<ResponseObjectService>(userService.saveUser(inputUser), HttpStatus.OK);
    }
+
+   // Delete User Data
     @DeleteMapping("/users/delete")
     public ResponseEntity<String> deletePost(@RequestBody UserEntity inputUserd) {
         userService.deleteUserById(String.valueOf(inputUserd.getId()));
@@ -103,6 +116,9 @@ public class UserController {
 //    public ResponseEntity<ResponseObjectService> update(@RequestBody UserEntity inputUser) {
 //        return new ResponseEntity<ResponseObjectService>(userService.update(inputUser), HttpStatus.OK);
 //    }
+
+
+// Get Users 
 
     @GetMapping("/getdata")
     public ResponseEntity<String> testAfterLogin(Principal p) {
