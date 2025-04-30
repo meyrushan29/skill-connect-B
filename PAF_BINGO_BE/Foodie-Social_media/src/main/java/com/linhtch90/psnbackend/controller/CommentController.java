@@ -47,9 +47,8 @@ public class CommentController {
         return new ResponseEntity<ResponseObjectService>(
                 commentService.editUserComment(inputComment, inputPostId.getId()), HttpStatus.OK);
 
-        // return new
         // ResponseEntity<ResponseObjectService>(commentService.editUserComment(inputPost),
-        // HttpStatus.OK);
+
     }
 
     // delete comment controller function
