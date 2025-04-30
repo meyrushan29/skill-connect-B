@@ -50,10 +50,12 @@ public class CommentController {
 
     }
 
-    // delete comment controller function
+    // delete comment
+
     @PutMapping("/deletecomment")
     public ResponseEntity<ResponseObjectService> deletePost(@RequestBody CommentPostRequestEntity postedComment) {
         System.out.println(postedComment);
+
         CommentEntity inputComment = postedComment.getCommentEntity();
         IdObjectEntity inputPostId = postedComment.getPostId();
         return new ResponseEntity<ResponseObjectService>(
