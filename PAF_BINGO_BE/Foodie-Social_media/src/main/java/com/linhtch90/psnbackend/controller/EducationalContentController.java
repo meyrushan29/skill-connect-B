@@ -67,11 +67,11 @@ public class EducationalContentController {
 
 
 
+
     @PostMapping("/bookmarked")
     public ResponseEntity<ResponseObjectService> getBookmarkedContent(@RequestBody IdObjectEntity userId) {
         return new ResponseEntity<>(educationalContentService.getBookmarkedContent(userId), HttpStatus.OK);
     }
-
 
 
 
