@@ -22,6 +22,8 @@ public class EducationalContentController {
         return new ResponseEntity<>(educationalContentService.createContent(content), HttpStatus.OK);
     }
 
+
+
     @PostMapping("/user")
     public ResponseEntity<ResponseObjectService> getUserContent(@RequestBody IdObjectEntity userId) {
         return new ResponseEntity<>(educationalContentService.getUserContent(userId), HttpStatus.OK);
@@ -47,20 +49,31 @@ public class EducationalContentController {
         return new ResponseEntity<>(educationalContentService.markAsLearned(request), HttpStatus.OK);
     }
 
+    
+
+
+
     @PostMapping("/bookmark")
     public ResponseEntity<ResponseObjectService> bookmarkContent(@RequestBody EducationalContentRequest request) {
         return new ResponseEntity<>(educationalContentService.bookmarkContent(request), HttpStatus.OK);
     }
+
+    
 
     @PostMapping("/learned")
     public ResponseEntity<ResponseObjectService> getLearnedContent(@RequestBody IdObjectEntity userId) {
         return new ResponseEntity<>(educationalContentService.getLearnedContent(userId), HttpStatus.OK);
     }
 
+
+
+
     @PostMapping("/bookmarked")
     public ResponseEntity<ResponseObjectService> getBookmarkedContent(@RequestBody IdObjectEntity userId) {
         return new ResponseEntity<>(educationalContentService.getBookmarkedContent(userId), HttpStatus.OK);
     }
+
+
 
     @PostMapping("/following")
     public ResponseEntity<ResponseObjectService> getFollowingContent(@RequestBody IdObjectEntity userId) {
