@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 //Devlopmment of Backend in Skill Sharing Part
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1")   
 public class PostController {
     @Autowired
     private PostService postService;
